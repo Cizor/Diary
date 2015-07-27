@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 /******PIG LATIN FOR A SENTENCE *******************/
+/***********TADAAA*************/
 std::string vowel_operation(std::string v_word){
 	std::string out_str;
 	out_str = v_word.substr(1,v_word.length()) + v_word[0] + "ay";
