@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-
+/**********PIG LATIN WORD****************/
 bool check_spaces(std::string word){
 	bool flag = true;
 	for(int i = 0;i < word.length();i++){
