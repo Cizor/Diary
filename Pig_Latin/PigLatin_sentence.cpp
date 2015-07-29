@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-/******PIG LATIN FOR A SENTENCE *******************/
+
 std::string vowel_operation(std::string v_word){
 	std::string out_str;
 	out_str = v_word.substr(1,v_word.length()) + v_word[0] + "ay";
@@ -26,20 +26,24 @@ std::string check_start(std::string check_word){
 	}
 	return str;
 }
-
-int check_spaces(std::string sentence){
-	int space_num;
-	for(int i = 0;i < sentence.length();i++){
-		if(sentence[i] == ' '){
-			space_num++;
-		}
-	}
-	return space_num;
-}
-
 int main(){
 	std::string str,s;
 	std::cout<<"Enter your line: ";
 	std::getline(std::cin,str);
-	std::cout<<check_spaces(str)<<std::endl;
+	std::cout<<"Entered String is : "<<str<<std::endl;
+	
+	for(int i = 0;i < str.length();i++){
+		if(str[i] != ' '){
+			s += str[i];
+		}
+		if(str[i] == ' ' || i == str.length()-1){
+			if(check_start(s) == "vowel_start"){
+				std::cout<<vowel_operation(s)<<" ";	
+			}else{
+				std::cout<<consonant_operation(s)<< " ";	
+			}
+			s = "";
+		}	
+	}
+	std::cout<<std::endl;
 }
