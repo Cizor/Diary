@@ -1,0 +1,18 @@
+*****************************************************************************
+/**********Some Useful Tips and Tricks to ease in C++ programming***********/
+*****************************************************************************
+/*Author: Amrit*************/
+/***************************/
+Note: Find example code for each Tip in respqctive Tip numbers directories in same parent folder.
+/***********************************************************************************************/
+
+1. To turn digits passed as string on console into integer directly.
+
+	Syntax : int i = string - '0';
+
+   Clarification: It calculates ASCII value of digit and finds its distance from ASCII code of '0' which is 0.
+
+		
+
+
+
