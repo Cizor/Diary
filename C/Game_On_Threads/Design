@@ -1,0 +1,47 @@
+###########################################################
+##### :      $$$GAME OF THRONES$$$          :##############
+##### :        [OBJECTIVES]                 :##############
+##### : BECOME RULER OF ALL LANDS           :##############
+##### : WHO WILL CONTROL THE CAPITOL        :##############
+##### : WHICH HOUSE WILL THE KING BELONG TO :##############
+###########################################################
+
+Knigdoms :
+1. The Westernlands
+2. The North
+3. The Riverlands
+4. The Vale
+5. The Stormlands
+6. The Reach
+7. The Dorne
+
+#Note : Kingdoms are made out of houses coming together.
+#		Their resources sum up to calculate resource for each Kingdom
+#		After an interval of time houses have to donate resources to Royal Reserve
+#		Strongest house of kindom sets ruler of Kingdom.
+#		Each Kingdom can donate to other Kingdom's Royal Reserves from their Royal Reserve
+
+
+Each Kingdom has :
+1. Wood
+2. Stone
+3. Food
+4. Water
+5. Naval Army
+6. Ground Army
+7. Other Sources of Power : Beasts, Dragons, Assasins, Magicians etc. 
+8. Supporting Houses
+9. Supporting Kingdoms
+10.Royal Reserve
+
+Each House :
+1. Wood 
+2. Stone
+3. Food
+4. Water
+5. Naval Amry
+6. Ground Army
+7. Other Sources of Power : Beasts, Dragons, Assasins, Magicians etc. 
+8. Supporting Houses
+9. Donation to Royal Reserve
+
