@@ -1,0 +1,51 @@
+##################PERSONAL LEARNING#######################
+
+1. Mounting a remote Linux directory in Linux:
+	a. Install sshfs through apt
+	b. sshfs source destination
+
+2. Mounting Windows Share in Linux
+	a. Install cifs-utils through apt
+	b. mount -t cifs //server-name/share /destination -o username=shareuser,password=sharepasswd 
+	c. User sudo !! if root required.
+
+3. Creating a dynamic library (.so) from a c file
+	gcc -shared -o libname.so -fPIC name.c
+  where,
+	-shared is used to produce a shared object to be used with other objects to form executable
+	-o to create object of customized name
+	-fPIC to generate position independent object which can be executed from any memory space on system and do not overlap with space used by
+	 other shared objects. Relative addressing is used in for accessing objects.
+4. Using a dynamic library with another C file
+	gcc -L{path-to-library} -Wl,-rpath={path-to-library} -Wall -o executablename executablename.c -l{library.so}
+  where,
+	-L is used to add directories where libraries have to searched specified in -l
+	-Wl,option is used to pass option to linker
+		here, -rpath is being sent to linker and its directory is set
+		-Wl,rapth={path} is equal to -Wl,rpath,{path}
+	-Wall is used to turn on all optional warnings which are desirable to normal code
+	-l is used to specify objects to be linked with executable
+
+5. Building a Android Native Code using remote Android SDK
+	Requirement : 64 bit machine (According to HOST_ARCH of Android SDK, if it wants 32 bit then 32 bit OS will do)
+	a. Get Android Native code 
+	b. Create a directory to mount remote Android SDK in it. Create it in same directory of our code to make relative path easy to get.
+	c. Mount Android SDK directory into  directory using sshfs
+		Ex: sshfs amrit@10.102.71.98:/home/amrit/disk_1/home/amrit/Desktop/new_Lollipop Android/
+	d. cd Android : it goes to remote Android SDK
+		Initialize Android Environment and set device using (source build/envsetup.sh and lunch [number-of-device])
+	e. From root of Android SDK pass a mmm command and use relative address to source code on our machine.
+		Ex: mmm ../isdb-android-service
+		Since we prefer to keep native code in same directory, a .. did the trick
+	
+Note: This technique can be utilized to create a dedicated Source Code Build Server and SDK can be utilized remotey without using memory space on personal PCs.
+ TBD: Figure out 
+	a. Which machine is running process threads of build?
+	b. RAM is utilized by which machine? How much? Is it more than actual build?
+	c. Compilation time taken is more. 50 secs compilation is taking around 2 minutes. Why? Is native code being copied first?
+	   Maybe each file is copied first and then compiled. Is it true?
+
+6. Highlight multiple words in vi
+
+		/\vWord1|Word2|Word3|....
+
