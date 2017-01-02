@@ -20,6 +20,10 @@ class TwoSum
 					}
 				}
 			}
+			if(vTemp.size() == 0){
+				p = std::make_pair(-1,-1);
+				vTemp.push_back(p);
+			}
 			
 			return vTemp;
 		}
